@@ -1,8 +1,13 @@
-// docs/get-npm-version.js
-import { execSync } from 'child_process';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-function getNpmVersion() {
-  return execSync('npm --version').toString().trim();
-}
+// Path to package.json
+const packageJsonPath = join(process.cwd(), 'package.json');
+
+// Read and parse the JSON file
+const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
+
+// Export the version from package.json
+const getNpmVersion = () => packageJson.version;
 
 export default getNpmVersion;
