@@ -2,7 +2,7 @@
 
 
 ## علایق من
-sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+بازی، کد نویسی، انیمه و ...
 
 ## پروژه‌ها
 
