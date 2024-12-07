@@ -1,8 +1,6 @@
-// get-npm-version.js (located in the root of your project)
-const { execSync } = require('child_process');
+// docs/get-npm-version.js
+import { execSync } from 'child_process';
 
-function getNpmVersion() {
+export function getNpmVersion() {
   return execSync('npm --version').toString().trim();
 }
-
-module.exports = getNpmVersion;
