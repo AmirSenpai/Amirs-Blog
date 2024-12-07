@@ -1,6 +1,6 @@
-// docs/.vitepress/theme/index.js
+import DefaultTheme from 'vitepress/theme';
 
 export default {
-    // You can add custom theme configurations here
-  };
-  
+  ...DefaultTheme,
+  Layout: DefaultTheme.Layout,
+};
