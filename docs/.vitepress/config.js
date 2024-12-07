@@ -1,6 +1,6 @@
 // docs/.vitepress/config.js
 
-import { getNpmVersion } from './get-npm-version.js';
+import getNpmVersion from 'docs/get-npm-version.js'; // Adjust the path
 
 export default {
   title: 'AmirSenpai',
