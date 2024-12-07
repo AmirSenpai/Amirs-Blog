@@ -1,5 +1,6 @@
   export default {
     title: `AmirSenpai`,
+    base: '/Amirs-Blog/',
     themeConfig: {
       nav: [
         { text: 'خانه', link: '/' },
