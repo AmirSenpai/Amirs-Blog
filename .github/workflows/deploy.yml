@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Runs the workflow whenever there’s a push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # GitHub runner environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # You can adjust the version based on your needs
+
+      - name: Install dependencies
+        run: npm install  # Installs your project's dependencies
+
+      - name: Build the site
+        run: npx vitepress build docs  # Builds the VitePress site from docs
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages        # The branch where GitHub Pages is deployed
+          folder: docs/.vitepress/dist  # The folder to deploy from
+          token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
