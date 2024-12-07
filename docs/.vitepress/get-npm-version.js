@@ -1,8 +1,8 @@
-// get-npm-version.js
-const { execSync } = require('child_process');
+// docs/.vitepress/get-npm-version.js
 
-function getNpmVersion() {
-  return execSync('npm --version').toString().trim();
-}
-
-module.exports = getNpmVersion;
+export function getNpmVersion() {
+    const { execSync } = require('child_process');
+    const npmVersion = execSync('npm --version').toString().trim();
+    return npmVersion;
+  }
+  

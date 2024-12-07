@@ -1,8 +1,9 @@
-// Import the npm version script
-import getNpmVersion from './get-npm-version.js';
+// docs/.vitepress/config.js
+
+import { getNpmVersion } from './get-npm-version.js';
 
 export default {
-  title: `AmirSenpai`,
+  title: 'AmirSenpai',
   base: '/Amirs-Blog/',
   themeConfig: {
     nav: [
@@ -22,8 +23,7 @@ export default {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/AmirSenpai' },
       { icon: 'telegram', link: 'https://t.me/itsdekusenpai' }
-    ],
-    // Inject npm version dynamically
-    subtitle: `npm version: ${getNpmVersion()}`  // Add the npm version to the config
-  }
+    ]
+  },
+  subtitle: `npm version: ${getNpmVersion()}`  // Display npm version in subtitle
 };
