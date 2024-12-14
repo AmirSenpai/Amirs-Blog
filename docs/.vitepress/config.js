@@ -6,7 +6,7 @@ export default {
   themeConfig: {
     nav: [
       { text: 'خانه', link: '/' },
-      { text: 'درباره من', link: '/about' },
+      { text: 'درباره من', link: '/posts/whoami' },
     ],
     sidebar: {
       '/posts/': [
