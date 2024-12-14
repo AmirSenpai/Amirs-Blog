@@ -1,12 +1,14 @@
-import { execSync } from 'child_process';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-function getNpmVersion() {
+export default function getNpmVersion() {
   try {
-    const version = execSync('npm --version').toString().trim();
-    return version;
+    const packageJsonPath = join(process.cwd(), 'package.json');
+    const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'));
+    console.log('NPM Version Read from package.json:', packageJson.version);  // Log the version
+    return packageJson.version || 'No version found';
   } catch (error) {
-    return 'Version not found'; // Fallback in case of error
+    console.error('Error reading package.json:', error);
+    return 'No version found';
   }
 }
-
-export default getNpmVersion;
